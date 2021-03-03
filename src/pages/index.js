@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getAllPosts } from '../lib/api';
 import Image from 'next/image';
 import styles from './index.module.css';
+import ReactTimeAgo from 'react-time-ago';
 
 export default function Home({ allPosts }) {
   return (
@@ -34,7 +35,7 @@ export default function Home({ allPosts }) {
                 return (
                   <li className={styles.post} key={post.slug}>
                     <div className={styles.time}>{post.date}</div>
-                    <Link href='#'>
+                    <Link as={`/posts/${post.slug}`} href='/posts/[slug]'>
                       <a className={styles.title}>{post.title}</a>
                     </Link>
                   </li>
