@@ -4,4 +4,85 @@
 }
 body {
   background-color: #141618;
+  /* font-family: 'AlfaSlab'; */
+}
+
+@font-face {
+  font-family: 'AlfaSlab';
+  src: url('/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 43rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.bio-card {
+  display: flex;
+  color: #f6f5f8;
+  font-weight: bold;
+  line-height: 1.2rem;
+}
+
+.bio-card a {
+  color: #a379c9;
+  padding: 0.45rem;
+  text-decoration: underline;
+}
+
+.main-header {
+  margin-bottom: 2.5rem;
+}
+
+.main-header a {
+  color: rgb(185, 181, 181);
+  font-family: 'AlfaSlab';
+  line-height: 2rem;
+}
+article {
+  color: #e2d5ee;
+  margin-bottom: 2.5rem;
+}
+article a {
+  font-family: 'AlfaSlab';
+  margin-bottom: 0.34rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #a379c9;
+}
+
+main {
+  margin-top: 2rem;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #e2d5ee;
+}
+
+footer a {
+  color: #a379c9;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  margin-right: 1.2rem;
+}
+
+.intro-card {
+  margin-bottom: 3rem;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.bio-card {
+  display: flex;
 }
