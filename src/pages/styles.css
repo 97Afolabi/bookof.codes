@@ -4,7 +4,13 @@
 }
 body {
   background-color: #141618;
-  /* font-family: 'AlfaSlab'; */
+  font-family: 'Nunito';
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito/Nunito-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
@@ -23,6 +29,7 @@ a {
   max-width: 43rem;
   margin: 0 auto;
   padding: 2.5rem 1.25rem;
+  min-height: 100vh;
 }
 
 .bio-card {
@@ -46,6 +53,7 @@ a {
   color: rgb(185, 181, 181);
   font-family: 'AlfaSlab';
   line-height: 2rem;
+  font-size: 1rem;
 }
 article {
   color: #e2d5ee;
@@ -55,7 +63,7 @@ article a {
   font-family: 'AlfaSlab';
   margin-bottom: 0.34rem;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #a379c9;
 }
 

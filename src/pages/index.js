@@ -1,10 +1,10 @@
-import Head from 'next/head';
 import Link from 'next/link';
-import { getAllPosts } from '../lib/api';
-import Image from 'next/image';
-import Layout from '../components/Layout';
+import fs from 'fs';
+import { join } from 'path';
+import matter from 'gray-matter';
 
 export default function Home({ allPosts }) {
+  console.log(allPosts);
   return (
     <div className='container'>
       <header className='main-header'>
@@ -27,68 +27,33 @@ export default function Home({ allPosts }) {
       </aside>
 
       <main>
-        <article>
-          <header>
-            <Link href='/'>
-              <a>
-                <h2>Cuncurrent Go!</h2>
-              </a>
-            </Link>
+        {allPosts.map((post) => {
+          return (
+            <article key={post.title}>
+              <header>
+                <Link href={'posts/' + post.slug}>
+                  <a>
+                    <h2>{post.title}</h2>
+                  </a>
+                </Link>
 
-            <small>Feb 23, 2021</small>
-          </header>
-          <p>What i learnt from working with go.</p>
-        </article>
-
-        <article>
-          <header>
-            <Link href='/'>
-              <a>
-                <h2>Cuncurrent Go! Yes!</h2>
-              </a>
-            </Link>
-
-            <small>Feb 23, 2021</small>
-          </header>
-          <p>What i learnt from working with go.</p>
-        </article>
-
-        <article>
-          <header>
-            <Link href='/'>
-              <a>
-                <h2>Cuncurrent Go! You should try it</h2>
-              </a>
-            </Link>
-
-            <small>Feb 23, 2021</small>
-          </header>
-          <p>What i learnt from working with go.</p>
-        </article>
-
-        <article>
-          <header>
-            <Link href='/'>
-              <a>
-                <h2>Cuncurrent Go! Why not?</h2>
-              </a>
-            </Link>
-
-            <small>Feb 23, 2021</small>
-          </header>
-          <p>What i learnt from working with go.</p>
-        </article>
+                <small>{post.date}</small>
+              </header>
+              <p>What i learnt from working with go.</p>
+            </article>
+          );
+        })}
       </main>
       <footer>
-        <Link href=''>
+        <Link href='/'>
           <a>github</a>
         </Link>
 
-        <Link href=''>
+        <Link href='/'>
           <a>twitter</a>
         </Link>
 
-        <Link href=''>
+        <Link href='/'>
           <a>rss</a>
         </Link>
       </footer>
@@ -97,9 +62,22 @@ export default function Home({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug']);
+  const postsDirectory = join(process.cwd(), '_posts');
+  const slugs = fs.readdirSync(postsDirectory);
+  const posts = slugs.map((slug) => {
+    const slugPath = join(postsDirectory, slug);
+    const raw = fs.readFileSync(slugPath, 'utf-8');
+    const { data } = matter(raw);
+    return data;
+  });
+
+  posts.forEach((post) => {
+    let d = new Date(post.date);
+    let args = { day: 'numeric', month: 'long', year: 'numeric' };
+    post.date = d.toLocaleDateString(undefined, args);
+  });
 
   return {
-    props: { allPosts },
+    props: { allPosts: [...posts] },
   };
 }
