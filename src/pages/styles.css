@@ -4,6 +4,7 @@
 }
 body {
   background-color: #141618;
+
   font-family: 'Nunito';
 }
 
@@ -30,6 +31,9 @@ a {
   margin: 0 auto;
   padding: 2.5rem 1.25rem;
   min-height: 100vh;
+  color: #e7e7e9dc;
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 .bio-card {

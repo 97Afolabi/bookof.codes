@@ -1,34 +1,30 @@
-import markdownToHtml, { getAllPosts, getPostBySlug } from '../../lib/api';
-
+import { useEffect } from 'react';
+import { getAllSlugs, getPostBySlug } from '../../lib/api';
+import Prism from 'prismjs';
 export default function Post({ post }) {
-  return <div dangerouslySetInnerHTML={{ __html: post.content }}></div>;
-}
-
-export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content']);
-  const content = await markdownToHtml(post.content || '');
-
-  return {
-    props: {
-      post: {
-        ...post,
-        content,
-      },
-    },
-  };
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+  return (
+    <div className='container'>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </div>
+  );
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug']);
-
+  const posts = await getAllSlugs();
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths: posts.map((post) => ({
+      params: { slug: post },
+    })),
     fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const post = await getPostBySlug(params.slug);
+  return {
+    props: { post },
   };
 }

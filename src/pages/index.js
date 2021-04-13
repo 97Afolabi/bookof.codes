@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import fs from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
+import { getPosts } from '../lib/api';
 
 export default function Home({ allPosts }) {
   console.log(allPosts);
@@ -31,7 +29,7 @@ export default function Home({ allPosts }) {
           return (
             <article key={post.title}>
               <header>
-                <Link href={'posts/' + post.slug}>
+                <Link href={`posts/${post.slug}`}>
                   <a>
                     <h2>{post.title}</h2>
                   </a>
@@ -62,20 +60,7 @@ export default function Home({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const postsDirectory = join(process.cwd(), '_posts');
-  const slugs = fs.readdirSync(postsDirectory);
-  const posts = slugs.map((slug) => {
-    const slugPath = join(postsDirectory, slug);
-    const raw = fs.readFileSync(slugPath, 'utf-8');
-    const { data } = matter(raw);
-    return data;
-  });
-
-  posts.forEach((post) => {
-    let d = new Date(post.date);
-    let args = { day: 'numeric', month: 'long', year: 'numeric' };
-    post.date = d.toLocaleDateString(undefined, args);
-  });
+  const posts = await getPosts();
 
   return {
     props: { allPosts: [...posts] },
