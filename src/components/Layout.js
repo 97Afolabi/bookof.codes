@@ -1,22 +1,32 @@
 import React from 'react';
-import Head from 'next/head';
+import Link from 'next/link';
+import Bio from './Bio';
 
 export default function Layout({ children }) {
   return (
-    <div style={{}}>
-      <Head>
-        <link rel='icon' href='/favicon.ico' />
-        <meta
-          name='description'
-          content='Learn how to build a personal website using Next.js'
-        />
+    <div className='container'>
+      <header className='main-header'>
+        <Link href='/'>
+          <a>
+            <h1>bookofcodes</h1>
+          </a>
+        </Link>
+      </header>
 
-        <meta name='og:title' content='bookof.codes' />
-        <meta name='twitter:card' content='summary_large_image' />
-      </Head>
-      <header></header>
+      <main>{children}</main>
+      <footer>
+        <Link href='/'>
+          <a>github</a>
+        </Link>
 
-      {children}
+        <Link href='/'>
+          <a>twitter</a>
+        </Link>
+
+        <Link href='/'>
+          <a>rss</a>
+        </Link>
+      </footer>
     </div>
   );
 }

@@ -23,6 +23,12 @@ export async function getPosts() {
     return data;
   });
 
+  posts.forEach((post) => {
+    let d = new Date(post.date);
+    let args = { day: 'numeric', month: 'long', year: 'numeric' };
+    post.date = d.toLocaleDateString(undefined, args);
+  });
+
   return posts;
 }
 
@@ -32,14 +38,10 @@ export async function getPostBySlug(slug) {
   const postPath = join(postsDirectory, `${slug}.md`);
   const fileContent = fs.readFileSync(postPath, 'utf-8');
   const { data, content } = matter(fileContent);
-  const htmlContent = await markdownToHtml(content);
-  return { ...data, content: htmlContent };
+  // const htmlContent = await markdownToHtml(content);
+
+  return { ...data, content };
 }
-// posts.forEach((post) => {
-//   let d = new Date(post.date);
-//   let args = { day: 'numeric', month: 'long', year: 'numeric' };
-//   post.date = d.toLocaleDateString(undefined, args);
-// });
 
 // Get all available post slugs for getStaticPath
 export async function getAllSlugs() {

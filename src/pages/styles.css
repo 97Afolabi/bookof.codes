@@ -4,8 +4,35 @@
 }
 body {
   background-color: #141618;
+}
+a {
+  text-decoration: none;
+  color: #a379c9;
+}
 
+p {
   font-family: 'Nunito';
+  line-height: 1.5em;
+  padding: 0.5em 0;
+}
+
+header {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+}
+header h1 {
+  font-weight: 900;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem 0;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.904);
+}
+
+code {
+  margin: 1rem 0;
 }
 
 @font-face {
@@ -14,16 +41,13 @@ body {
   font-display: swap;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;900&display=swap');
 @font-face {
   font-family: 'AlfaSlab';
   src: url('/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-}
-
-a {
-  text-decoration: none;
 }
 
 .container {
@@ -34,19 +58,6 @@ a {
   color: #e7e7e9dc;
   font-weight: 300;
   font-size: 1rem;
-}
-
-.bio-card {
-  display: flex;
-  color: #f6f5f8;
-  font-weight: bold;
-  line-height: 1.2rem;
-}
-
-.bio-card a {
-  color: #a379c9;
-  padding: 0.45rem;
-  text-decoration: underline;
 }
 
 .main-header {
@@ -64,7 +75,7 @@ article {
   margin-bottom: 2.5rem;
 }
 article a {
-  font-family: 'AlfaSlab';
+  font-family: 'Roboto Slab', serif;
   margin-bottom: 0.34rem;
   font-weight: bold;
   font-size: 1rem;

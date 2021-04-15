@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
 import { getAllSlugs, getPostBySlug } from '../../lib/api';
-import Prism from 'prismjs';
+import ReactMarkdown from 'react-markdown';
+import CodeBlock from '../../components/CodeBlock';
+import Layout from '../../components/Layout';
+
 export default function Post({ post }) {
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
   return (
-    <div className='container'>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
+    <Layout>
+      <header>
+        <h1>{post.title}</h1>
+        <small>{post.date}</small>
+      </header>
+
+      <ReactMarkdown source={post.content} renderers={{ code: CodeBlock }} />
+    </Layout>
   );
 }
 
