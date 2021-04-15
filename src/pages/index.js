@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Bio from '../components/Bio';
+
 import Layout from '../components/Layout';
 import { getPosts } from '../lib/api';
 

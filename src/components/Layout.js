@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Bio from './Bio';
 
 export default function Layout({ children }) {
   return (
