@@ -1,89 +1,64 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Montserrat:wght@700;900&display=swap');
+
 body {
   background-color: #141618;
 }
-a {
-  text-decoration: none;
-  color: #a379c9;
-}
-
-p {
-  font-family: 'Nunito';
-  line-height: 1.5em;
-  padding: 0.5em 0;
-}
-
-header {
-  margin-bottom: 1.5rem;
-  color: #fff;
-  font-family: 'Roboto Slab', serif;
-}
-header h1 {
-  font-weight: 900;
-}
-
-h2 {
-  margin: 1rem 0 0.5rem 0;
-  font-weight: normal;
-  color: rgba(255, 255, 255, 0.904);
-}
-
-code {
-  margin: 1rem 0;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url('/fonts/Nunito/Nunito-Regular.ttf');
-  font-display: swap;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;900&display=swap');
-@font-face {
-  font-family: 'AlfaSlab';
-  src: url('/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
 
 .container {
-  max-width: 43rem;
+  max-width: 42rem;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem;
+  padding: 2.625rem 1.3125rem;
   min-height: 100vh;
   color: #e7e7e9dc;
   font-weight: 300;
   font-size: 1rem;
 }
 
-.main-header {
-  margin-bottom: 2.5rem;
-}
-
-.main-header a {
-  color: rgb(185, 181, 181);
-  font-family: 'AlfaSlab';
-  line-height: 2rem;
-  font-size: 1rem;
-}
-article {
-  color: #e2d5ee;
-  margin-bottom: 2.5rem;
-}
-article a {
-  font-family: 'Roboto Slab', serif;
-  margin-bottom: 0.34rem;
-  font-weight: bold;
-  font-size: 1rem;
+a {
+  text-decoration: none;
   color: #a379c9;
 }
 
+small,
+p {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+p {
+  line-height: 1.5em;
+  padding: 0.5em 0;
+  color: #e5e5e6;
+  margin-bottom: 1.75rem;
+}
+
+h2 {
+  margin-bottom: 0.4375rem;
+  font-weight: 900;
+  margin-top: 3.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
+}
+
+code {
+  margin: 1rem 0;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.625rem;
+}
+
 main {
-  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
 }
 
 footer {
@@ -96,16 +71,4 @@ footer a {
   font-size: 1.2rem;
   text-decoration: underline;
   margin-right: 1.2rem;
-}
-
-.intro-card {
-  margin-bottom: 3rem;
-}
-
-.avatar {
-  border-radius: 50%;
-}
-
-.bio-card {
-  display: flex;
 }

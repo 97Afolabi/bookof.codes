@@ -1,11 +1,11 @@
 import React from 'react';
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 export default function CodeBlock({ language, value }) {
- 
   return (
-    <SyntaxHighlighter showLineNumbers={true} language={language} style={dracula} >
+    <SyntaxHighlighter language={language} style={vscDarkPlus}>
       {value}
     </SyntaxHighlighter>
   );
