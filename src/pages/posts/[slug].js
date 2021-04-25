@@ -28,6 +28,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPostBySlug(params.slug);
+  let d = new Date(post.date);
+  let args = { day: 'numeric', month: 'long', year: 'numeric' };
+  post.date = d.toLocaleDateString(undefined, args);
   return {
     props: { post },
   };
