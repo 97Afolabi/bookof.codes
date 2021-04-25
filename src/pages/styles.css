@@ -24,35 +24,67 @@ a {
   color: #a379c9;
 }
 
-small,
-p {
-  font-family: 'Merriweather Sans', sans-serif;
+article a {
+  display: block;
+  margin-bottom: 0.4375rem;
+  font-weight: 700;
+  margin-top: 3.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
 }
 
 p {
-  line-height: 1.5em;
+  font: 100%/0.8 'Merriweather Sans', sans-serif;
+  line-height: 1.8;
   padding: 0.5em 0;
-  color: #e5e5e6;
+  color: #e5e5e6d8;
   margin-bottom: 1.75rem;
+}
+
+h1 {
+  margin-bottom: 0.4375rem;
+  font-weight: 900;
+  margin-top: 3.5rem;
+  font-size: 1.75rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
   margin-bottom: 0.4375rem;
-  font-weight: 900;
+  font-weight: 700;
   margin-top: 3.5rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.2rem;
 }
 
 code {
   margin: 1rem 0;
+  padding: 0.5em;
+}
+
+article {
+  margin-top: 3.5rem;
 }
 
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.625rem;
+  margin-bottom: 5rem;
+}
+.main-header a {
+  font-size: 1.23rem;
+  color: #e5e5e6;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sl-head a {
+  color: #a379c9;
+}
+
+.post-head {
+  margin-bottom: 2.5rem;
 }
 
 main {

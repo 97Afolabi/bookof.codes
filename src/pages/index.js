@@ -5,15 +5,13 @@ import { getPosts } from '../lib/api';
 
 export default function Home({ allPosts }) {
   return (
-    <Layout>
+    <Layout pageTitle='bookof.codes' description='Personal Blog By Uche'>
       {allPosts.map((post) => {
         return (
           <article key={post.title}>
             <header>
               <Link href={`posts/${post.slug}`}>
-                <a>
-                  <h2>{post.title}</h2>
-                </a>
+                <a>{post.title}</a>
               </Link>
 
               <small>{post.date}</small>

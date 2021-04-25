@@ -7,7 +7,6 @@ date: '2020-03-16T05:35:07.322Z'
 ## Each Render Has Its Own Props and State
 
 Before we can talk about effects, we need to talk about rendering.
-
 Here’s a counter. Look at the highlighted line closely:
 
 ```go

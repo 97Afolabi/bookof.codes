@@ -5,8 +5,8 @@ import Layout from '../../components/Layout';
 
 export default function Post({ post }) {
   return (
-    <Layout pageTitle={post.title} description={post.excerpt}>
-      <header>
+    <Layout pageTitle={post.title} description={post.excerpt} slugPage={true}>
+      <header className='post-head'>
         <h1>{post.title}</h1>
         <small>{post.date}</small>
       </header>
