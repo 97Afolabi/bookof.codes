@@ -27,11 +27,11 @@ export default function Layout({ children, pageTitle, description, slugPage }) {
         <main>{children}</main>
         <footer>
           <Link href='https://github.com/uchenoel'>
-            <a>github</a>
+            <a target='_blank'>github</a>
           </Link>
 
           <Link href='https://twitter.com/cybernuel'>
-            <a>twitter</a>
+            <a target='_blank'>twitter</a>
           </Link>
         </footer>
       </div>

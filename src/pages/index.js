@@ -10,7 +10,7 @@ export default function Home({ allPosts }) {
         return (
           <article key={post.title}>
             <header>
-              <Link href={`posts/${post.slug}`}>
+              <Link href={`/posts/${post.slug}`}>
                 <a>{post.title}</a>
               </Link>
 
