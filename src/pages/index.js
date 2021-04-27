@@ -15,7 +15,7 @@ export default function Home({ allPosts }) {
               </Link>
 
               <small>{post.date}</small>
-              <p>What i learnt from working with go.</p>
+              <p>{post.excerpt}.</p>
             </header>
           </article>
         );
