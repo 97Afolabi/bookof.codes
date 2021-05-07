@@ -1,106 +1,53 @@
-* {
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-toggle-track {
+  width: 50px;
+  height: 24px;
   padding: 0;
-  box-sizing: inherit;
+  border-radius: 30px;
+  background-color: #0f1114;
+  transition: all 0.2s ease;
 }
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Montserrat:wght@700;900&display=swap');
-
-body {
-  background-color: #141618;
-}
-
-.container {
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 2.625rem 1.3125rem;
-  min-height: 100vh;
-  color: #e7e7e9dc;
-  font-weight: 300;
-  font-size: 1rem;
+.react-toggle--checked .react-toggle-track {
+  background-color: #0f1114;
 }
 
-a {
-  text-decoration: none;
-  color: #a379c9;
+.react-toggle-track-check {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  left: 5px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-article a {
-  display: block;
-  margin-bottom: 0.4375rem;
-  font-weight: 700;
-  margin-top: 3.5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+.react-toggle-track-x {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 5px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
-p {
-  font: 100%/0.8 'Merriweather Sans', sans-serif;
-  line-height: 1.8;
-  padding: 0.5em 0;
-  color: #e5e5e6d8;
-  margin-bottom: 1.75rem;
+.react-toggle--focus .react-toggle-thumb {
+  box-shadow: 0px 0px 2px 3px rgb(143, 89, 179);
 }
 
-h1 {
-  margin-bottom: 0.4375rem;
-  font-weight: 900;
-  margin-top: 3.5rem;
-  font-size: 1.75rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-h2 {
-  margin-bottom: 0.4375rem;
-  font-weight: 700;
-  margin-top: 3.5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-}
-
-code {
-  margin: 1rem 0;
-  padding: 0.5em;
-}
-
-article {
-  margin-top: 3.5rem;
-}
-
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5rem;
-}
-.main-header a {
-  font-size: 1.23rem;
-  color: #e5e5e6;
-  font-weight: 900;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sl-head a {
-  color: #a379c9;
-}
-
-.post-head {
-  margin-bottom: 2.5rem;
-}
-
-main {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 42rem;
-}
-
-footer {
-  margin-top: 2rem;
-  color: #e2d5ee;
-}
-
-footer a {
-  color: #a379c9;
-  font-size: 1.2rem;
-  text-decoration: underline;
-  margin-right: 1.2rem;
+.react-toggle:active .react-toggle-thumb {
+  box-shadow: 0px 0px 5px 5px rgb(143, 89, 179);
 }

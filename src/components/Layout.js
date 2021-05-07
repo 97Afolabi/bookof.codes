@@ -1,35 +1,64 @@
 import React from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
+import { useTheme } from 'next-themes';
+
+import Toggle from 'react-toggle';
+
 export default function Layout({ children, pageTitle, description, slugPage }) {
+  const { theme, setTheme } = useTheme();
   return (
     <>
-      <Head>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta charSet='utf-8' />
-        <meta name='description' content={description} />
+      <div class='p-7'>
+        <header class='flex justify-between mb-8 items-center'>
+          <h1 class=' font-heads font-black text-3xl'>
+            <Link href='/'>
+              <a>Bookofcodes</a>
+            </Link>
+          </h1>
 
-        <meta property='og:title' content={pageTitle} key='ogtitle' />
-        <meta property='og:description' content={description} key='ogdesc' />
-
-        <title>{pageTitle}</title>
-      </Head>
-
-      <div className='container'>
-        <header className={`main-header ${slugPage ? 'sl-head' : ''}`}>
-          <Link href='/'>
-            <a>
-              <h1>bookofcodes</h1>
-            </a>
-          </Link>
+          <div>
+            <Toggle
+              defaultChecked={true}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className='custom-classname'
+              icons={{
+                checked: (
+                  <img
+                    src='/sun.png'
+                    width='16'
+                    height='16'
+                    role='presentation'
+                    style={{ pointerEvents: 'none' }}
+                  />
+                ),
+                unchecked: (
+                  <img
+                    src='/moon.png'
+                    width='16'
+                    height='16'
+                    role='presentation'
+                    style={{ pointerEvents: 'none' }}
+                  />
+                ),
+              }}
+            />
+          </div>
         </header>
 
+        <div class='flex mb-14 items-center'>
+          <img src='/avatar.jpg' class='rounded-full h-14 w-14 mr-3.5' />
+          <p class='text-sm font-body leading-5'>
+            Hey 👋🏼, Welcome to my personal code blog. <br />
+            Here i write about things i learn and work with everyday.
+          </p>
+        </div>
+
         <main>{children}</main>
-        <footer>
+        <footer class='mt-16 pt-8'>
           <Link href='https://github.com/uchenoel'>
             <a target='_blank'>github</a>
-          </Link>
-
+          </Link>{' '}
+          ●{' '}
           <Link href='https://twitter.com/cybernuel'>
             <a target='_blank'>twitter</a>
           </Link>
