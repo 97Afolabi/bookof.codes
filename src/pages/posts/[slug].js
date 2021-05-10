@@ -34,7 +34,13 @@ export default function Post({ post }) {
       </div>
 
       <div class='flex mb-14 mt-16 items-center border p-1 rounded-md'>
-        <img src='/avatar.jpg' class='rounded-full h-14 w-14 mr-3.5' />
+        <img
+          src='/avatar.jpg'
+          alt='profile image'
+          width='50'
+          height='50'
+          class='rounded-full  mr-3.5'
+        />
         <p class='text-sm font-body leading-5 dark:text-mgrey'>
           Hey 👋🏼, Welcome to my personal code blog. <br />
           Here i write about things i learn and work with everyday.
