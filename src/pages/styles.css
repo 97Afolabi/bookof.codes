@@ -60,3 +60,15 @@ article a {
 .blog-foot a {
   text-decoration: underline;
 }
+
+.content h2 {
+  font-weight: 900;
+  font-family: 'Merriweather', serif;
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.content p {
+  margin-bottom: 1.2rem;
+  font: 100%/1.75 'Merriweather', 'Georgia', serif;
+}
