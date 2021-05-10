@@ -10,14 +10,14 @@ export default function Home({ allPosts }) {
         return (
           <article key={post.title} class='mb-16'>
             <header>
-              <h3 class='font-heads font-black text-2xl leading-7'>
+              <h3 class='font-heads font-black text-2xl leading-7 dark:text-tomato'>
                 <Link href={`/posts/${post.slug}`}>
                   <a>{post.title}</a>
                 </Link>
               </h3>
-              <small>{post.date}</small>
+              <small class='dark:text-mgrey'>{post.date}</small>
             </header>
-            <p class='font-body'>What i learnt from working with go.</p>
+            <p class='font-body dark:text-mgrey'>{post.excerpt}</p>
           </article>
         );
       })}

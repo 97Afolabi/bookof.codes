@@ -51,3 +51,12 @@
 .react-toggle:active .react-toggle-thumb {
   box-shadow: 0px 0px 5px 5px rgb(143, 89, 179);
 }
+
+footer a,
+article a {
+  text-decoration: underline;
+}
+
+.blog-foot a {
+  text-decoration: underline;
+}
