@@ -12,7 +12,7 @@ export async function markdownToHtml(markdown) {
 }
 
 // Fetch the title , excerpt and date for home page
-export async function getPosts() {
+export async function getPosts(shallow = false) {
   const slugs = fs.readdirSync(postsDirectory);
   const posts = slugs.map((slug) => {
     const actualSlug = slug.replace(/\.md$/, '');
@@ -20,13 +20,16 @@ export async function getPosts() {
     const raw = fs.readFileSync(slugPath, 'utf-8');
     const { data } = matter(raw);
     data['slug'] = actualSlug;
-    return data;
-  });
 
-  posts.forEach((post) => {
-    let d = new Date(post.date);
+    if (shallow) {
+      return { title: data.title, slug: actualSlug };
+    }
+
+    let d = new Date(data.date);
     let args = { day: 'numeric', month: 'long', year: 'numeric' };
-    post.date = d.toLocaleDateString(undefined, args);
+    data.date = d.toLocaleDateString(undefined, args);
+
+    return data;
   });
 
   return posts;
@@ -35,12 +38,27 @@ export async function getPosts() {
 // Get post by [slug] param
 export async function getPostBySlug(slug) {
   // const realSlug = slug.replace(/\.md$/, '')
+
   const postPath = join(postsDirectory, `${slug}.md`);
   const fileContent = fs.readFileSync(postPath, 'utf-8');
   const { data, content } = matter(fileContent);
-  // const htmlContent = await markdownToHtml(content);
 
-  return { ...data, content };
+  const posts = await getPosts(true);
+
+  const index = posts.findIndex((post, index) => {
+    return post.slug === slug;
+  });
+
+  let post = { ...data, content, posts, index, slug };
+  if (index != 0) {
+    post['prevPost'] = posts[index - 1];
+  }
+
+  if (posts.length - 1 > index) {
+    post['nextPost'] = posts[index + 1];
+  }
+
+  return post;
 }
 
 // Get all available post slugs for getStaticPath

@@ -8,9 +8,11 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head />
-        <body>
+        <link rel='shortcut icon' href='/favicon.ico' />
+
+        <body className='dark:bg-gray-900'>
           <Main />
           <NextScript />
         </body>
