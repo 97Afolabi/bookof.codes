@@ -71,6 +71,15 @@ article a {
   padding: 2rem 0;
 }
 
+.ntf {
+  font-weight: bold;
+  font-family: Montserrat, Courier, monospace;
+  text-align: center;
+  min-height: 50vh;
+  font-size: 1.2rem;
+  min-width: 100%;
+}
+
 .content p {
   margin-bottom: 1.2rem;
   font: 100%/1.75 'Merriweather', 'Georgia', serif;

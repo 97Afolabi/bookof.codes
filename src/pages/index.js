@@ -6,7 +6,7 @@ import { getPosts } from '../lib/api';
 
 export default function Home({ allPosts }) {
   return (
-    <Layout pageTitle='bookof.codes' description='Personal Blog By Uche'>
+    <Layout pageTitle='Home' description='Personal Code  Blog By Uchechukwu'>
       <Bio />
       {allPosts.map((post) => {
         return (

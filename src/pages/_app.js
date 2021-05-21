@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
           type: 'website',
           locale: 'en_IE',
           url: 'https://bookof.codes/',
-          site_name: 'BookofCodes',
+          site_name: 'bookof.codes',
         }}
       />
       <Component {...pageProps} />
