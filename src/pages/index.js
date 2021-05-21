@@ -18,6 +18,7 @@ export default function Home({ allPosts }) {
                 </Link>
               </h3>
               <small className='dark:text-mgrey'>{post.date}</small>
+
             </header>
             <p className='font-body dark:text-mgrey'>{post.excerpt}</p>
           </article>
