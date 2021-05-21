@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import CodeBlock from '../../components/CodeBlock';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
+import Bio from '../../components/Bio';
 
 export default function Post({ post }) {
   return (
@@ -20,31 +21,19 @@ export default function Post({ post }) {
         className='prose lg:prose-xl dark:text-mgrey content'
       />
 
-      <div class='flex justify-between border mt-12 border-gray-200 rounded-md py-6 blog-foot px-3 '>
+      <div className='flex justify-between border mt-12 border-gray-200 rounded-md py-6 blog-foot px-3 '>
         {post.prevPost && (
           <Link href={`/posts/${post.prevPost.slug}`}>
-            <a class='dark:text-tomato w-1/2'>&larr;{post.prevPost.title}</a>
+            <a className='dark:text-tomato w-1/2'>
+              &larr;{post.prevPost.title}
+            </a>
           </Link>
         )}
         {post.nextPost && (
           <Link href={`/posts/${post.nextPost.slug}`}>
-            <a class='dark:text-tomato '>{post.nextPost.title} &rarr;</a>
+            <a className='dark:text-tomato '>{post.nextPost.title} &rarr;</a>
           </Link>
         )}
-      </div>
-
-      <div class='flex mb-14 mt-16 items-center border p-1 rounded-md'>
-        <img
-          src='/avatar.jpg'
-          alt='profile image'
-          width='50'
-          height='50'
-          class='rounded-full  mr-3.5'
-        />
-        <p class='text-sm font-body leading-5 dark:text-mgrey'>
-          Hey 👋🏼, Welcome to my personal code blog. <br />
-          Here i write about things i learn and work with everyday.
-        </p>
       </div>
     </Layout>
   );
