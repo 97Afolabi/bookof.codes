@@ -1,8 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@100;300;400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10vh;
+}
+
+header h1 {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.intro {
+  max-width: clamp(500px, 40vw, 400px);
+  margin-bottom: 10vh;
+}
+
+.widget {
+  margin-bottom: 5vh;
+  display: flex;
+}
+.widget input[type='text'] {
+  width: clamp(500px, 40vw, 400px);
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  border: none;
+}
+
+article {
+  max-width: clamp(500px, 40vw, 400px);
+  margin-bottom: 2rem;
+}
+
+#date-tag {
+  max-width: 100px;
+  padding: 5px;
+  background: #9ba9ff;
+  text-align: center;
+  border-radius: 0px 8px 0px 0px;
+}
+
+#post-card {
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.144);
+  box-sizing: border-box;
+}
+
+#post-card h2 {
+  font-family: Poppins;
+  font-style: normal;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  color: #003566;
+  font-size: 24px;
+  line-height: 122%;
+}
+
+#intro-card p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 122%;
+}
+
+/* 
 
 .react-toggle-track {
   width: 50px;
@@ -96,4 +174,4 @@ main {
     max-width: 60%;
     margin: auto;
   }
-}
+} */
