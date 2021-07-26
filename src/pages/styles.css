@@ -1,8 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@100;300;400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #141414;
+  display: inline-block;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+p a {
+  background-color: rgba(7, 202, 202, 0.637);
+  margin: 0 0.5rem;
+  border-radius: 2px;
+}
+p a:hover {
+  background-color: #aeafb198;
+}
+nav a {
+  padding: 0 0.5rem;
+  color: #343a40;
+  transition: background-color 0.8s;
+  border-radius: 2px;
+}
+
+nav a:hover {
+  background-color: aqua;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10vh;
+}
+
+header h1 {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  margin-bottom: 0;
+}
+
+.intro {
+  max-width: clamp(500px, 40vw, 400px);
+  margin-bottom: 10vh;
+}
+
+/* .widget {
+  margin-bottom: 5vh;
+  display: flex;
+} */
+/* .widget input[type='text'] {
+  width: clamp(500px, 40vw, 400px);
+  height: 50px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  border: none;
+}
+
+.widget input[type='text']:focus {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.18);
+  outline: none;
+} */
+
+article {
+  max-width: clamp(500px, 40vw, 400px);
+  margin-bottom: 2rem;
+}
+
+#date-tag {
+  max-width: 90px;
+  padding: 0.2rem 0.5rem;
+  color: #ffffff;
+  font-size: 0.8rem;
+  background: #343a40;
+  text-align: left;
+  border-radius: 0px 8px 0px 0px;
+}
+
+#post-card {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+#post-card a {
+  font-family: Poppins;
+  font-style: normal;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 122%;
+}
+#post-card a:hover {
+  text-decoration: underline;
+}
+
+#intro-card p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 122%;
+}
+#post-header {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+
+#post-title {
+  margin: 0;
+  padding: 0;
+}
+#post-date {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.post {
+  max-width: clamp(800px, 40vw, 400px);
+  margin: 0 auto;
+}
+
+pre {
+  border-radius: 8px;
+}
+
+/* 
 
 .react-toggle-track {
   width: 50px;
@@ -96,4 +236,4 @@ main {
     max-width: 60%;
     margin: auto;
   }
-}
+} */

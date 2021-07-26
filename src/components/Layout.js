@@ -1,12 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import Head from 'next/head';
 
-import Toggle from 'react-toggle';
-
-export default function Layout({ children, pageTitle, description, slugPage }) {
-  const { theme, setTheme } = useTheme();
+export default function Layout({ children, pageTitle, description }) {
   return (
     <>
       <Head>
@@ -14,58 +11,28 @@ export default function Layout({ children, pageTitle, description, slugPage }) {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='description' content={description}></meta>
       </Head>
-      <div className='p-7 sp-container'>
-        <header className='flex justify-between mb-8 items-center main-nav'>
-          <h1 className='font-heads font-black text-2xl dark:text-tomato'>
-            <Link href='/'>
-              <a>Bookofcodes</a>
-            </Link>
-          </h1>
-
-          <div>
-            <Toggle
-              defaultChecked={true}
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className='custom-classname'
-              aria-label='Switch between Dark and Light mode'
-              icons={{
-                checked: (
-                  <img
-                    src='/sun.png'
-                    width='16'
-                    height='16'
-                    role='presentation'
-                    style={{ pointerEvents: 'none' }}
-                  />
-                ),
-                unchecked: (
-                  <img
-                    src='/moon.png'
-                    width='16'
-                    height='16'
-                    role='presentation'
-                    style={{ pointerEvents: 'none' }}
-                  />
-                ),
-              }}
-            />
-          </div>
-        </header>
-
-        <main className=''>{children}</main>
-        <footer className='mt-16 pt-8 dark:text-tomato flex justify-center w-full'>
-          <Link href='https://github.com/uchenoel'>
-            <a target='_blank' rel='noreferrer'>
-              github
-            </a>
-          </Link>{' '}
-          ・{' '}
-          <Link href='https://twitter.com/cybernuel'>
-            <a target='_blank' rel='noreferrer'>
-              twitter
+      <div className='container'>
+        <header>
+          <Link href='/'>
+            <a>
+              <h1>bookof.codes</h1>
             </a>
           </Link>
-        </footer>
+
+          <nav>
+            <Link href='https://github.com/uchenoel/bookof.codes'>
+              <a>github</a>
+            </Link>
+            <Link href='https://twitter.com/asenwibor'>
+              <a>twitter</a>
+            </Link>
+            <Link href='/rss'>
+              <a>rss</a>
+            </Link>
+          </nav>
+        </header>
+
+        {children}
       </div>
     </>
   );
