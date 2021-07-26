@@ -11,7 +11,7 @@ export default function Home({ allPosts }) {
         <h1>bookof.codes</h1>
         <nav>
           <Link href='/'>
-            <a className='subtn'>subscribe</a>
+            <a>github</a>
           </Link>
           <Link href='/'>
             <a>twitter</a>
@@ -27,21 +27,25 @@ export default function Home({ allPosts }) {
           <p>
             This site is a collection of things i’ve had to search on google and
             stackoverflow over the course of my career so it’s more like a
-            memory cache of “How To”. I hope you what you need to help you
+            memory cache of “How To”. I hope you find what you need to help you
             figure out whatever it is that lead you here. For any sugestions or
-            enquiries you can reach me on twitter or checkout my personal site.
+            enquiries you can reach me on
+            <Link href='/'>
+              <a>twitter</a>
+            </Link>
+            .
           </p>
         </div>
 
-        <div className='widget'>
-          <input type='text' />
-        </div>
-
         <section>
+          <h1>Posts</h1>
           <article>
             <div id='date-tag'>20-20-29</div>
             <div id='post-card'>
-              <h2>Serving Static Files in golang </h2>
+              <Link href='/'>
+                <a>Serving Static Files in golang</a>
+              </Link>
+
               <p>How to serve static files in go web servers.</p>
             </div>
           </article>
@@ -63,7 +67,7 @@ export default function Home({ allPosts }) {
           </article>
 
           <article>
-            <div id='date-tag'>20-20-29</div>
+            <div id='date-tag'>18, July 2020</div>
             <div id='post-card'>
               <h2>Serving Static Files in golang </h2>
               <p>How to serve static files in go web servers.</p>
