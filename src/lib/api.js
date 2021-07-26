@@ -25,10 +25,6 @@ export async function getPosts(shallow = false) {
       return { title: data.title, slug: actualSlug };
     }
 
-    let d = new Date(data.date);
-    let args = { day: 'numeric', month: 'long', year: 'numeric' };
-    data.date = d.toLocaleDateString(undefined, args);
-
     return data;
   });
 

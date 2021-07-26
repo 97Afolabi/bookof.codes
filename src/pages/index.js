@@ -1,26 +1,10 @@
 import Link from 'next/link';
-import Bio from '../components/Bio';
-
 import Layout from '../components/Layout';
 import { getPosts } from '../lib/api';
 
 export default function Home({ allPosts }) {
   return (
-    <div className='container'>
-      <header>
-        <h1>bookof.codes</h1>
-        <nav>
-          <Link href='/'>
-            <a>github</a>
-          </Link>
-          <Link href='/'>
-            <a>twitter</a>
-          </Link>
-          <Link href='/'>
-            <a>rss</a>
-          </Link>
-        </nav>
-      </header>
+    <Layout pageTitle='Home' description='A tiny collection of code stuff.'>
       <main>
         <div className='intro'>
           <h1>About</h1>
@@ -39,43 +23,23 @@ export default function Home({ allPosts }) {
 
         <section>
           <h1>Posts</h1>
-          <article>
-            <div id='date-tag'>20-20-29</div>
-            <div id='post-card'>
-              <Link href='/'>
-                <a>Serving Static Files in golang</a>
-              </Link>
+          {allPosts.map((post) => {
+            return (
+              <article key={post.title}>
+                <div id='date-tag'>{post.date}</div>
+                <div id='post-card'>
+                  <Link href={`/posts/${post.slug}`}>
+                    <a>{post.title}</a>
+                  </Link>
 
-              <p>How to serve static files in go web servers.</p>
-            </div>
-          </article>
-
-          <article>
-            <div id='date-tag'>20-20-29</div>
-            <div id='post-card'>
-              <h2>Serving Static Files in golang </h2>
-              <p>How to serve static files in go web servers.</p>
-            </div>
-          </article>
-
-          <article>
-            <div id='date-tag'>20-20-29</div>
-            <div id='post-card'>
-              <h2>Serving Static Files in golang </h2>
-              <p>How to serve static files in go web servers.</p>
-            </div>
-          </article>
-
-          <article>
-            <div id='date-tag'>18, July 2020</div>
-            <div id='post-card'>
-              <h2>Serving Static Files in golang </h2>
-              <p>How to serve static files in go web servers.</p>
-            </div>
-          </article>
+                  <p>{post.excerpt}</p>
+                </div>
+              </article>
+            );
+          })}
         </section>
       </main>
-    </div>
+    </Layout>
   );
 }
 

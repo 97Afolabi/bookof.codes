@@ -7,6 +7,10 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+a {
+  text-decoration: none;
+  color: #141414;
+}
 
 .container {
   max-width: 80%;
@@ -14,9 +18,7 @@ body {
 }
 p a {
   background-color: rgba(7, 202, 202, 0.637);
-  text-decoration: none;
   margin: 0 0.5rem;
-  color: #141414;
   border-radius: 2px;
 }
 p a:hover {
@@ -25,11 +27,12 @@ p a:hover {
 nav a {
   padding: 0 0.5rem;
   color: #343a40;
+  transition: background-color 0.8s;
+  border-radius: 2px;
 }
 
 nav a:hover {
   background-color: aqua;
-  text-decoration: none;
 }
 
 h1 {
@@ -79,7 +82,7 @@ article {
 }
 
 #date-tag {
-  max-width: 80px;
+  max-width: 90px;
   padding: 0.2rem 0.5rem;
   color: #ffffff;
   font-size: 0.8rem;
@@ -90,7 +93,6 @@ article {
 
 #post-card {
   padding: 0.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.144);
   box-sizing: border-box;
 }
 
@@ -113,6 +115,29 @@ article {
   font-weight: 300;
   font-size: 16px;
   line-height: 122%;
+}
+#post-header {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+
+#post-title {
+  margin: 0;
+  padding: 0;
+}
+#post-date {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.post {
+  max-width: clamp(800px, 40vw, 400px);
+  margin: 0 auto;
+}
+
+pre {
+  border-radius: 8px;
 }
 
 /* 
