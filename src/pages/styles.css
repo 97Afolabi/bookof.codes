@@ -10,6 +10,7 @@ body {
 a {
   text-decoration: none;
   color: #141414;
+  display: inline-block;
 }
 
 .container {
@@ -49,6 +50,7 @@ header {
 
 header h1 {
   font-size: clamp(1rem, 2.5vw, 2rem);
+  margin-bottom: 0;
 }
 
 .intro {
