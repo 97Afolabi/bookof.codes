@@ -20,13 +20,13 @@ export default function Layout({ children, pageTitle, description }) {
           </Link>
 
           <nav>
-            <Link href='/'>
+            <Link href='https://github.com/uchenoel/bookof.codes'>
               <a>github</a>
             </Link>
-            <Link href='/'>
+            <Link href='https://twitter.com/asenwibor'>
               <a>twitter</a>
             </Link>
-            <Link href='/'>
+            <Link href='/rss'>
               <a>rss</a>
             </Link>
           </nav>
