@@ -26,7 +26,7 @@ export default function Layout({ children, pageTitle, description }) {
             <Link href='https://twitter.com/asenwibor'>
               <a>twitter</a>
             </Link>
-            <Link href='/rss'>
+            <Link href='/rss.xml'>
               <a>rss</a>
             </Link>
           </nav>
