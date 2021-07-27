@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:rss && next build",
+    "build:rss": "node ./src/scripts/rss.js",
     "start": "next start"
   },
   "dependencies": {
