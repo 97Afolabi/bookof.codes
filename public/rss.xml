@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Uchechukwu's blog feeds]]></title>
+        <description><![CDATA[A collection of "How To".]]></description>
+        <link>https://bookof.codes</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 27 Jul 2021 01:11:56 GMT</lastBuildDate>
+        <atom:link href="https://bookof.codes/rss" rel="self" type="application/rss+xml"/>
+        <pubDate>Invalid Date</pubDate>
+        <copyright><![CDATA[2020 bookof.codes]]></copyright>
+        <language><![CDATA[en]]></language>
+        <managingEditor><![CDATA[Uche Noel]]></managingEditor>
+        <webMaster><![CDATA[Uche Noel]]></webMaster>
+        <ttl>60</ttl>
+        <item>
+            <title><![CDATA[First Blog Post]]></title>
+            <description><![CDATA[Finally finished my blog]]></description>
+            <link>https://bookof.codes/posts/genesis</link>
+            <guid isPermaLink="true">https://bookof.codes/posts/genesis</guid>
+            <dc:creator><![CDATA[uchenoel]]></dc:creator>
+            <pubDate>Sat, 25 Jul 2020 23:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
