@@ -161,7 +161,7 @@ pre {
 img {
   margin-top: 0.5rem;
   width: 100%;
-  height: fit-content;
+  height: auto;
   border: 1px solid rgba(128, 128, 128, 0.863);
 }
 pre ~ p {
