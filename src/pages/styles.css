@@ -138,10 +138,35 @@ article {
   margin: 0 auto;
 }
 
+ol,
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.post h2,
+.post p {
+  margin-bottom: 1.5rem;
+}
+
+p em {
+  background-color: #bcbcbd;
+  padding: 0 0.5rem;
+}
+
 pre {
   border-radius: 8px;
 }
 
+img {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: fit-content;
+  border: 1px solid rgba(128, 128, 128, 0.863);
+}
+pre ~ p {
+  margin: 0;
+}
 /* 
 
 .react-toggle-track {

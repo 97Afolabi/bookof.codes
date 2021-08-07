@@ -4,13 +4,13 @@
         <description><![CDATA[A collection of "How To".]]></description>
         <link>https://bookof.codes</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Jul 2021 01:11:56 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 07 Aug 2021 19:43:27 GMT</lastBuildDate>
         <atom:link href="https://bookof.codes/rss" rel="self" type="application/rss+xml"/>
-        <pubDate>Invalid Date</pubDate>
+        <pubDate>Thu, 08 Jul 2021 19:43:27 GMT</pubDate>
         <copyright><![CDATA[2020 bookof.codes]]></copyright>
         <language><![CDATA[en]]></language>
-        <managingEditor><![CDATA[Uche Noel]]></managingEditor>
-        <webMaster><![CDATA[Uche Noel]]></webMaster>
+        <managingEditor><![CDATA[info@uchenoel.com]]></managingEditor>
+        <webMaster><![CDATA[info@uchenoel.com]]></webMaster>
         <ttl>60</ttl>
         <item>
             <title><![CDATA[First Blog Post]]></title>
@@ -19,6 +19,14 @@
             <guid isPermaLink="true">https://bookof.codes/posts/genesis</guid>
             <dc:creator><![CDATA[uchenoel]]></dc:creator>
             <pubDate>Sat, 25 Jul 2020 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hosting node.js app on shared hosting.]]></title>
+            <description><![CDATA[Deploying node js app on shared hosting with cpanel]]></description>
+            <link>https://bookof.codes/posts/nodejs-on-cpanel</link>
+            <guid isPermaLink="true">https://bookof.codes/posts/nodejs-on-cpanel</guid>
+            <dc:creator><![CDATA[uchenoel]]></dc:creator>
+            <pubDate>Fri, 06 Aug 2021 23:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

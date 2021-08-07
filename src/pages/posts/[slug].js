@@ -1,8 +1,10 @@
+import dynamic from 'next/dynamic';
+
 import { getAllSlugs, getPostBySlug } from '../../lib/api';
 import ReactMarkdown from 'react-markdown';
-import CodeBlock from '../../components/CodeBlock';
-import Layout from '../../components/Layout';
 import Link from 'next/link';
+const Layout = dynamic(import('../../components/Layout'));
+const CodeBlock = dynamic(import('../../components/CodeBlock'));
 
 export default function Post({ post }) {
   return (
