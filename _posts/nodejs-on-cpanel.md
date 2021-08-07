@@ -65,7 +65,7 @@ Depending on the operating system you use, the steps may differ. I'm on a mac so
 4. Now head back to your cpanel dashboard and find the _"software"_ section.
    ![cpanel dashboard](/posts/nodejs-on-cpanel-08.png)
 
-5. Fill in the fields according to your requirement, leave the application URL field empty if you're not using a sub domain.
+5. Fill in the fields according to your requirement, leave the application URL field empty if you're not using a sub domain and click create.
    ![node on cpanel app guide](/posts/nodejs-on-cpanel-05.png)
 
 6. Click _NPM Install_ (\*Do not click run script.)
