@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-
 import { getAllSlugs, getPostBySlug } from '../../lib/api';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
@@ -8,7 +7,7 @@ const CodeBlock = dynamic(import('../../components/CodeBlock'));
 
 export default function Post({ post }) {
   return (
-    <Layout pageTitle={post.title} description={post.excerpt}>
+    <Layout pageTitle={post.title} description={post.excerpt} lnk={post.slug}>
       <main className='post'>
         <header id='post-header'>
           <h1 id='post-title'>{post.title}</h1>

@@ -1,15 +1,31 @@
 import React from 'react';
-import { useTheme } from 'next-themes';
+
 import Link from 'next/link';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
-export default function Layout({ children, pageTitle, description }) {
+export default function Layout({ children, pageTitle, description, lnk }) {
   return (
     <>
+      <NextSeo
+        title={`bookof.codes | ${pageTitle}`}
+        description={description}
+        canonical={`https://bookof.codes${lnk !== '' ? '/posts/' + lnk : ''}`}
+        openGraph={{
+          url: `https://bookof.codes${lnk !== '' ? '/posts/' + lnk : ''}`,
+          title: `bookof.codes | ${pageTitle}`,
+          description,
+          site_name: 'bookof.codes',
+        }}
+        twitter={{
+          handle: '@asenwibor',
+          site: '@asenswibor',
+          cardType: 'summary',
+        }}
+      />
       <Head>
         <title>bookof.codes | {pageTitle}</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <meta name='description' content={description}></meta>
       </Head>
       <div className='container'>
         <header>
