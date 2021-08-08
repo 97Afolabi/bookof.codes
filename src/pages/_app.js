@@ -9,9 +9,13 @@ export default function MyApp({ Component, pageProps }) {
       <DefaultSeo
         openGraph={{
           type: 'website',
-          locale: 'en_IE',
-          url: 'https://bookof.codes/',
+          url: 'https://bookof.codes',
           site_name: 'bookof.codes',
+        }}
+        twitter={{
+          handle: '@asenwibor',
+          site: '@asenwibor',
+          cardType: 'summary',
         }}
       />
       <Component {...pageProps} />
